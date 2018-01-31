@@ -11,19 +11,19 @@ class Search extends Component {
 
   handleFormSubmit(e) {
     e.preventDefault();
-    console.log('searched');
+    console.log(this.state.value);
   }
   handleFormInput(e) {
     this.setState({ value: e.target.value});
-    console.log('Inputted!');
+    //console.log('Inputted!');
   }
 
   render() {
     return (
       <div className="Search">
-        <form onClick={ this.handleFormSubmit }>
-          <input type= "text" value={ this.state.value } onChange={ this.handleFormInput } />
-          <button type = "submit" >Search</button>
+        <form onSubmit={ this.handleFormSubmit }>
+          <input type="text" value={ this.state.value } onChange={ this.handleFormInput } />
+          <button type="submit" >Search</button>
         </form>
       </div>
     );
