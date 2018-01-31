@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Search from './components/Search';
 
 class Home extends Component {
-  render() {
+
+    render() {
     return (
       <div className="Home">
         <h1>Hello Friggin World</h1>
