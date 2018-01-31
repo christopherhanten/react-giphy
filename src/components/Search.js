@@ -1,16 +1,29 @@
 import React, { Component } from 'react';
 
 class Search extends Component {
-  handleButtonClick(e) {
+  constructor(props){
+    super(props)
+    this.state = {value: ""}
+
+    this.handleFormSubmit= this.handleFormSubmit.bind(this);
+    this.handleFormInput= this.handleFormInput.bind(this);
+  }
+
+  handleFormSubmit(e) {
     e.preventDefault();
     console.log('searched');
   }
+  handleFormInput(e) {
+    this.setState({ value: e.target.value});
+    console.log('Inputted!');
+  }
+
   render() {
     return (
       <div className="Search">
-        <form>
-          <input type= "text" />
-          <button type= "submit" onClick={(e) => this.handleButtonClick(e)}>Search</button>
+        <form onClick={ this.handleFormSubmit }>
+          <input type= "text" value={ this.state.value } onChange={ this.handleFormInput } />
+          <button type = "submit" >Search</button>
         </form>
       </div>
     );
