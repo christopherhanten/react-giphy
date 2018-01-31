@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Search from './components/Search';
+import SearchContainer from './containers/SearchContainer';
 
 class Home extends Component {
 
@@ -7,7 +7,7 @@ class Home extends Component {
     return (
       <div className="Home">
         <h1>Hello Friggin World</h1>
-        <Search />
+        <SearchContainer />
       </div>
     );
   }
